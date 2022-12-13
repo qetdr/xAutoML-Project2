@@ -17,7 +17,7 @@ TBW
 ## Project Workflow
 TBW
 
-## Projection Solution
+## Project Solution
 TBW
 
 ## Summary and Conclusions

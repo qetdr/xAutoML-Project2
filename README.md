@@ -7,6 +7,8 @@ Project 2 for the 'Explainable Automated Machine Learning' (LTAT.02.023) course
 Dmitri Rozgonjuk <br>
 Lisanna Lehes <br>
 Marilin Moor <br>
+Allan Mitt <br>
+Jure Vito Srovin 
 
 ## Files and Directories
 TBW

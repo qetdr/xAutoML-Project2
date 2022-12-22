@@ -1,0 +1,7 @@
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data
+df_project2.xlsx

@@ -6,4 +6,4 @@ __pycache__/
 # Data
 df_project2.xlsx
 automl_model_X1.pkl
-automl_model_X1.pk2
+automl_model_X2.pkl

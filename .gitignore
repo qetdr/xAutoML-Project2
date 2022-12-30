@@ -8,3 +8,6 @@ __pycache__/
 df_project2.xlsx
 automl_model_X1.pkl
 automl_model_X2.pkl
+
+# 
+.DS_Store

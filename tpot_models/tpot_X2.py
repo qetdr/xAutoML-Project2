@@ -1,7 +1,9 @@
 import numpy as np
 import pandas as pd
+from sklearn.ensemble import ExtraTreesClassifier, GradientBoostingClassifier
+from sklearn.feature_selection import RFE
 from sklearn.model_selection import train_test_split
-from xgboost import XGBClassifier
+from sklearn.pipeline import make_pipeline
 from sklearn.impute import SimpleImputer
 
 # NOTE: Make sure that the outcome column is labeled 'target' in the data file
@@ -15,8 +17,11 @@ imputer.fit(training_features)
 training_features = imputer.transform(training_features)
 testing_features = imputer.transform(testing_features)
 
-# Average CV score on the training set was: 0.9079855484723574
-exported_pipeline = XGBClassifier(learning_rate=0.001, max_depth=7, min_child_weight=9, n_estimators=100, n_jobs=1, subsample=0.9000000000000001, verbosity=0)
+# Average CV score on the training set was: 0.90934345410496
+exported_pipeline = make_pipeline(
+    RFE(estimator=ExtraTreesClassifier(criterion="entropy", max_features=0.15000000000000002, n_estimators=100), step=0.9000000000000001),
+    GradientBoostingClassifier(learning_rate=0.1, max_depth=5, max_features=0.3, min_samples_leaf=12, min_samples_split=3, n_estimators=100, subsample=0.4)
+)
 
 exported_pipeline.fit(training_features, training_target)
 results = exported_pipeline.predict(testing_features)

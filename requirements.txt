@@ -7,3 +7,5 @@ pandas
 numpy
 openpyxl
 tpot
+tk
+shap

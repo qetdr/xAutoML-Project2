@@ -11,6 +11,20 @@ automl_model_X2.pkl
 target.csv
 X1.csv
 X2.csv
+X1_train.pkl
+X2_train.pkl
+y1_train.pkl
+y2_train.pkl
+X1_val.pkl
+X2_val.pkl
+y1_val.pkl
+y2_val.pkl
+tpot_model_X1.pickle
+tpot_model_X2.pickle
+explainer_x1.sav
+explainer_x2.sav
+shap_values_x1.sav
+shap_values_x2.sav
 
 # 
 .DS_Store

@@ -19,6 +19,7 @@ X1_val.pkl
 X2_val.pkl
 y1_val.pkl
 y2_val.pkl
+tpot_model.pickle
 tpot_model_X1.pickle
 tpot_model_X2.pickle
 explainer_x1.sav

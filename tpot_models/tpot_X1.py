@@ -1,10 +1,11 @@
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
-from sklearn.linear_model import SGDClassifier
+from sklearn.ensemble import ExtraTreesClassifier, GradientBoostingClassifier
+from sklearn.feature_selection import RFE
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import make_pipeline, make_union
 from tpot.builtins import StackingEstimator
+from xgboost import XGBClassifier
 from sklearn.impute import SimpleImputer
 from tpot.export_utils import set_param_recursive
 
@@ -19,11 +20,11 @@ imputer.fit(training_features)
 training_features = imputer.transform(training_features)
 testing_features = imputer.transform(testing_features)
 
-# Average CV score on the training set was: 0.9144442303468017
+# Average CV score on the training set was: 0.915828523415523
 exported_pipeline = make_pipeline(
-    StackingEstimator(estimator=SGDClassifier(alpha=0.0, eta0=1.0, fit_intercept=True, l1_ratio=0.5, learning_rate="invscaling", loss="hinge", penalty="elasticnet", power_t=0.0)),
-    StackingEstimator(estimator=GradientBoostingClassifier(learning_rate=0.01, max_depth=3, max_features=0.9500000000000001, min_samples_leaf=16, min_samples_split=10, n_estimators=100, subsample=0.45)),
-    RandomForestClassifier(bootstrap=True, criterion="gini", max_features=1.0, min_samples_leaf=10, min_samples_split=20, n_estimators=100)
+    RFE(estimator=ExtraTreesClassifier(criterion="entropy", max_features=0.7000000000000001, n_estimators=100), step=0.8),
+    StackingEstimator(estimator=GradientBoostingClassifier(learning_rate=0.01, max_depth=1, max_features=0.45, min_samples_leaf=7, min_samples_split=20, n_estimators=100, subsample=0.9500000000000001)),
+    XGBClassifier(learning_rate=0.001, max_depth=3, min_child_weight=9, n_estimators=100, n_jobs=1, subsample=1.0, verbosity=0)
 )
 # Fix random state for all the steps in exported pipeline
 set_param_recursive(exported_pipeline.steps, 'random_state', 42)

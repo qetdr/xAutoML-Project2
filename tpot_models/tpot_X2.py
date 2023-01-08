@@ -1,8 +1,9 @@
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import make_pipeline, make_union
+from sklearn.svm import LinearSVC
 from tpot.builtins import StackingEstimator
 from sklearn.impute import SimpleImputer
 from tpot.export_utils import set_param_recursive
@@ -18,11 +19,10 @@ imputer.fit(training_features)
 training_features = imputer.transform(training_features)
 testing_features = imputer.transform(testing_features)
 
-# Average CV score on the training set was: 0.9126299473614102
+# Average CV score on the training set was: 0.9141220482881474
 exported_pipeline = make_pipeline(
-    StackingEstimator(estimator=RandomForestClassifier(bootstrap=True, criterion="gini", max_features=0.7000000000000001, min_samples_leaf=8, min_samples_split=4, n_estimators=100)),
-    StackingEstimator(estimator=GradientBoostingClassifier(learning_rate=0.01, max_depth=6, max_features=0.4, min_samples_leaf=6, min_samples_split=14, n_estimators=100, subsample=1.0)),
-    RandomForestClassifier(bootstrap=False, criterion="gini", max_features=0.8, min_samples_leaf=16, min_samples_split=16, n_estimators=100)
+    StackingEstimator(estimator=LinearSVC(C=0.1, dual=False, loss="squared_hinge", penalty="l1", tol=1e-05)),
+    GradientBoostingClassifier(learning_rate=0.1, max_depth=2, max_features=0.15000000000000002, min_samples_leaf=14, min_samples_split=20, n_estimators=100, subsample=0.8)
 )
 # Fix random state for all the steps in exported pipeline
 set_param_recursive(exported_pipeline.steps, 'random_state', 42)

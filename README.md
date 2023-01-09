@@ -4,7 +4,7 @@ Project 2 for the 'Explainable Automated Machine Learning' (LTAT.02.023) course.
 ## Team
 Marilin Moor <br>
 Dmitri Rozgonjuk <br>
-Jure Vito Srovin <br
+Jure Vito Srovin <br>
 Lisanna Lehes <br>
 Allan Mitt
 

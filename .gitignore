@@ -26,6 +26,10 @@ explainer_x1.sav
 explainer_x2.sav
 shap_values_x1.sav
 shap_values_x2.sav
+exp_1_x1.sav
+exp_2_x1.sav
+exp_1_x2.sav
+exp_2_x2.sav
 
 # 
 .DS_Store

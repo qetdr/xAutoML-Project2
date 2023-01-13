@@ -9,7 +9,7 @@ Lisanna Lehes <br>
 Allan Mitt
 
 ## Project Objective
-This project aims to use AutoML to predict clinical outcomes using imaging and clinical variables. The imaging modality of interest is positron emission tomography (PET). The outcome of interest to predict is major adverse cardiac event (MACE) with heart failure. The more specific goals are (1) finding the best machine learning pipelines (using the [TPOT framework](https://github.com/EpistasisLab/tpot)) for models based on two datasets with best weighted F1-scores, and (2) applying interpretability techniques to provide insights into the black-box models in order to explain the major drivers of predictions on a global, local as well on a group level.
+This project aims to use AutoML to predict clinical outcomes using imaging and clinical variables. The imaging modality of interest is positron emission tomography (PET). The outcome of interest to predict is major adverse cardiac event (MACE) with heart failure. The more specific goals are (1) finding the best machine learning pipelines (using the [TPOT framework](https://github.com/EpistasisLab/tpot)) for models based on two datasets with best weighted F1-scores, and (2) applying interpretability techniques (using the [SHAP framework](https://shap.readthedocs.io/en/latest/index.html)) to provide insights into the black-box models in order to explain the major drivers of predictions on a global, local as well on a group level.
 
 ## Project Workflow
 ❗ **TO DO**:

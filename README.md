@@ -32,17 +32,3 @@ We first started with selecting the appropariate data. We aimed to search for th
 ## How to Run
 Although the present projects includes relatively extensively computed solutions, it is also possible to run the models with self-defined (hyper-)parameters. For that, one needs to **first run the scripts in the `tpot_approach.ipynb` notebook** which **prepares the data and runs the TPOT framework**. Once the computations are done, the `.py` files for the best pipelines for datasets `X1` and `X2` are produced. Then, one needs to **continue with the `interpretability.ipynb` notebook** where the models are imported and **interactive interpretability** approach can be executed. We kept these approaches in separate notebooks for more clarity, as in both cases, running the scripts in notebooks can be time-consuming.
 
-## Results
-❗ **TO DO**:
-- Info about the best pipelines for both X1 and X2
-  - include also the runtimes
-- Comments on interpretability results
-  - Global
-    - example (screenshot)
-  - Local
-    - example (screenshot)
-  - Group
-    - example (screenshot)
-
-## Summary and Conclusions
-TBW

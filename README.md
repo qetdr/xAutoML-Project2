@@ -12,10 +12,9 @@ Allan Mitt
 This project aims to use AutoML to predict clinical outcomes using imaging and clinical variables. The imaging modality of interest is positron emission tomography (PET). The outcome of interest to predict is major adverse cardiac event (MACE) with heart failure. The more specific goals are (1) finding the best machine learning pipelines (using the [TPOT framework](https://github.com/EpistasisLab/tpot)) for models based on two datasets with best weighted F1-scores, and (2) applying interpretability techniques (using the [SHAP framework](https://shap.readthedocs.io/en/latest/index.html)) to provide insights into the black-box models in order to explain the major drivers of predictions on a global, local as well on a group level.
 
 ## Project Workflow
-❗ **TO DO**:
 The general project workflow is presented in Figure 1.
 
-TBW - will have a Canva flowchart here.
+![Figure 1: Project workflow](graph_readme.png "Project workflow")
 
 We first started with selecting the appropariate data. We aimed to search for the best pipelines in two data sets: one that included less features (the 'yellow' columns; X1), and the other that included additional features ('yellow' + 'blue' columns; X2). After data extraction, we split the total dataset into training and test data with❗ XX/XX split. The test data were kept separately to compute the goodness of the best pipeline which, in turn, was searched for with the TPOT framework. After the TPOT framework provided the best pipelines, we used them (i.e., for both X1 and X2 data) in interpretability frameworks. Model interpretability was provided on global (feature importances, SHAP summary plot), local (SHAP force_plot) as well as group (local explanation methods are used and aggregated for a certain group) levels. We extended some previously-produced software (SHAP) to include more customization in providing interpretability views.
 
